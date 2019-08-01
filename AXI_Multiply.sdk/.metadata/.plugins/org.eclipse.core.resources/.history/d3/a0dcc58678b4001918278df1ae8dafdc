@@ -1,0 +1,12 @@
+#include"xparameters.h"
+#include "xil_io.h"
+#include "xil_types.h"
+
+#define AB_address XPAR_MULTIPLY_2BIT_0_S00_AXI_BASEADDR
+#define C_address XPAR_MULTIPLY_2BIT_0_S00_AXI_BASEADDR + 4
+int main()
+
+{
+
+
+}

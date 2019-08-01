@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# 
+# Start of session at: Thu Aug  1 18:36:55 2019
+# Process ID: 872
+# Current directory: C:/Users/khazi/projects/AXI_Multiply/AXI_Multiply.sdk/webtalk
+# Command line: wbtcv.exe -mode batch -source sdk_webtalk.tcl
+# Log file: C:/Users/khazi/projects/AXI_Multiply/AXI_Multiply.sdk/webtalk/webtalk.log
+# Journal file: C:/Users/khazi/projects/AXI_Multiply/AXI_Multiply.sdk/webtalk\webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

@@ -1,0 +1,110 @@
+18:01:27 INFO  : Registering command handlers for SDK TCF services
+18:01:32 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\khazi\projects\AXI_Multiply\AXI_Multiply.sdk\temp_xsdb_launch_script.tcl
+18:01:40 INFO  : XSCT server has started successfully.
+18:01:40 INFO  : Successfully done setting XSCT server connection channel  
+18:01:53 INFO  : Successfully done setting SDK workspace  
+18:01:53 INFO  : Processing command line option -hwspec C:/Users/khazi/projects/AXI_Multiply/AXI_Multiply.sdk/design_1_wrapper.hdf.
+18:18:48 ERROR : Failed to closesw "C:/Users/khazi/projects/AXI_Multiply/AXI_Multiply.sdk/multiplySDK_bsp/system.mss"
+Reason: Cannot close sw design 'C:/Users/khazi/projects/AXI_Multiply/AXI_Multiply.sdk/multiplySDK_bsp/system.mss'.
+Design is not opened in the current session.
+
+
+18:34:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:34:50 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A74D50" && level==0} -index 0' command is executed.
+18:35:05 INFO  : FPGA configured successfully with bitstream "C:/Users/khazi/projects/AXI_Multiply/AXI_Multiply.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+18:35:34 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:35:34 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A74D50' is selected.
+18:35:34 INFO  : 'jtag frequency' command is executed.
+18:35:34 INFO  : Sourcing of 'C:/Xilinx/SDK/2018.3/scripts/sdk/util/zynqmp_utils.tcl' is done.
+18:35:34 INFO  : Context for 'APU' is selected.
+18:35:35 INFO  : Hardware design information is loaded from 'C:/Users/khazi/projects/AXI_Multiply/AXI_Multiply.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:35:35 INFO  : 'configparams force-mem-access 1' command is executed.
+18:35:35 INFO  : Context for 'APU' is selected.
+18:35:35 INFO  : Sourcing of 'C:/Users/khazi/projects/AXI_Multiply/AXI_Multiply.sdk/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+18:35:37 INFO  : 'psu_init' command is executed.
+18:35:38 INFO  : 'after 1000' command is executed.
+18:35:38 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+18:35:39 INFO  : 'after 1000' command is executed.
+18:35:39 INFO  : 'psu_ps_pl_reset_config' command is executed.
+18:35:39 INFO  : 'catch {psu_protection}' command is executed.
+18:35:39 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+18:35:39 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+18:35:39 INFO  : The application 'C:/Users/khazi/projects/AXI_Multiply/AXI_Multiply.sdk/multiplySDK/Debug/multiplySDK.elf' is downloaded to processor 'psu_cortexa53_0'.
+18:35:39 INFO  : 'configparams force-mem-access 0' command is executed.
+18:35:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Xilinx/SDK/2018.3/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A74D50"} -index 1
+loadhw -hw C:/Users/khazi/projects/AXI_Multiply/AXI_Multiply.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A74D50"} -index 1
+source C:/Users/khazi/projects/AXI_Multiply/AXI_Multiply.sdk/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A74D50"} -index 1
+rst -processor
+dow C:/Users/khazi/projects/AXI_Multiply/AXI_Multiply.sdk/multiplySDK/Debug/multiplySDK.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:35:39 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+18:35:40 INFO  : 'con' command is executed.
+18:35:40 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A74D50"} -index 1
+con
+----------------End of Script----------------
+
+18:35:40 INFO  : Launch script is exported to file 'C:\Users\khazi\projects\AXI_Multiply\AXI_Multiply.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_multiplysdk.elf_on_local.tcl'
+18:36:00 INFO  : Disconnected from the channel tcfchan#1.
+18:36:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:36:10 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A74D50' is selected.
+18:36:10 INFO  : 'jtag frequency' command is executed.
+18:36:10 INFO  : Sourcing of 'C:/Xilinx/SDK/2018.3/scripts/sdk/util/zynqmp_utils.tcl' is done.
+18:36:10 INFO  : Context for 'APU' is selected.
+18:36:10 INFO  : Hardware design information is loaded from 'C:/Users/khazi/projects/AXI_Multiply/AXI_Multiply.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:36:10 INFO  : 'configparams force-mem-access 1' command is executed.
+18:36:10 INFO  : Context for 'APU' is selected.
+18:36:10 INFO  : Sourcing of 'C:/Users/khazi/projects/AXI_Multiply/AXI_Multiply.sdk/design_1_wrapper_hw_platform_0/psu_init.tcl' is done.
+18:36:12 INFO  : 'psu_init' command is executed.
+18:36:14 INFO  : 'after 1000' command is executed.
+18:36:14 INFO  : 'psu_ps_pl_isolation_removal' command is executed.
+18:36:15 INFO  : 'after 1000' command is executed.
+18:36:15 INFO  : 'psu_ps_pl_reset_config' command is executed.
+18:36:15 INFO  : 'catch {psu_protection}' command is executed.
+18:36:15 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+18:36:15 INFO  : Processor reset is completed for 'psu_cortexa53_0'.
+18:36:15 INFO  : The application 'C:/Users/khazi/projects/AXI_Multiply/AXI_Multiply.sdk/multiplySDK/Debug/multiplySDK.elf' is downloaded to processor 'psu_cortexa53_0'.
+18:36:15 INFO  : 'configparams force-mem-access 0' command is executed.
+18:36:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Xilinx/SDK/2018.3/scripts/sdk/util/zynqmp_utils.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A74D50"} -index 1
+loadhw -hw C:/Users/khazi/projects/AXI_Multiply/AXI_Multiply.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x80000000 0xbfffffff} {0x400000000 0x5ffffffff} {0x1000000000 0x7fffffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A74D50"} -index 1
+source C:/Users/khazi/projects/AXI_Multiply/AXI_Multiply.sdk/design_1_wrapper_hw_platform_0/psu_init.tcl
+psu_init
+after 1000
+psu_ps_pl_isolation_removal
+after 1000
+psu_ps_pl_reset_config
+catch {psu_protection}
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A74D50"} -index 1
+rst -processor
+dow C:/Users/khazi/projects/AXI_Multiply/AXI_Multiply.sdk/multiplySDK/Debug/multiplySDK.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:36:15 INFO  : Context for processor 'psu_cortexa53_0' is selected.
+18:36:15 INFO  : 'con' command is executed.
+18:36:15 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~"*A53*0" && jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A74D50"} -index 1
+con
+----------------End of Script----------------
+
+18:36:15 INFO  : Launch script is exported to file 'C:\Users\khazi\projects\AXI_Multiply\AXI_Multiply.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_multiplysdk.elf_on_local.tcl'
+18:36:52 INFO  : Disconnected from the channel tcfchan#2.
